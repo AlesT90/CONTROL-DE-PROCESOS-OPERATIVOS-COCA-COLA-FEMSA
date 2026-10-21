@@ -58,3 +58,5 @@ Genera una cuenta de guardia por cada `guard` (`A`, `B`, `C` y `D`); cada cuenta
 ## Persistencia y producción
 
 La API incluida todavía usa un archivo JSON local como adaptador demostrativo; no se conecta automáticamente a MySQL y el módulo de novedades todavía no tiene vistas/API en la aplicación. `schema.sql` define la base integrada, pero para usarla desde la web falta sustituir el almacenamiento de `server.js` por consultas MySQL y mapear los nombres/catálogos legacy. Para desplegar con datos reales, añadir autenticación/autorización basada en `usuarios`, `roles` y `permisos`, auditoría, TLS, backups y políticas de retención. No utilizar este prototipo como sistema de control de acceso físico sin integración y revisión de seguridad.
+
+hola
