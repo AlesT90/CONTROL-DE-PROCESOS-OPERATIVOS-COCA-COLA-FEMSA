@@ -1,0 +1,14 @@
+{
+  "name": "kof-maracaibo-erp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Módulo ERP web para la gestión operativa de planta Maracaibo",
+  "scripts": {
+    "start": "node server.js",
+    "hash-password": "node scripts/hash-password.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

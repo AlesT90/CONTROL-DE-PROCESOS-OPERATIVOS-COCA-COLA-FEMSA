@@ -1,0 +1,62 @@
+{
+  "sedes": [
+    {
+      "id": "SED-001",
+      "nombre": "Planta Maracaibo",
+      "tipo": "Planta de Producción",
+      "direccion": "Zona Industrial, Av. 17, Maracaibo, estado Zulia",
+      "estado": "Activa",
+      "capacidad": 350,
+      "telefono": "+58 261 700 0000"
+    },
+    {
+      "nombre": "Distribuidora Sur",
+      "tipo": "Planta de Producción",
+      "estado": "Activa",
+      "direccion": "Zona Industrial",
+      "capacidad": 250,
+      "telefono": "04129687344",
+      "id": "SED-002"
+    }
+  ],
+  "trabajadores": [
+    {
+      "cedula": "V-30231578",
+      "nombre": "ALEX TRUJILLO",
+      "correo": "aetrujillorosillo@gmail.com",
+      "telefono": "04246496835",
+      "cargo": "Seguridad",
+      "departamento": "Seguridad",
+      "sedeId": "SED-001",
+      "estado": "Activo",
+      "fechaIngreso": "2026-10-20",
+      "id": "TRB-001"
+    },
+    {
+      "cedula": "V31876345",
+      "nombre": "DANIEL DIAZ",
+      "correo": "danielbobito@gmail.com",
+      "telefono": "0412568837",
+      "cargo": "Seguridad",
+      "departamento": "Seguridad",
+      "sedeId": "SED-001",
+      "estado": "Activo",
+      "fechaIngreso": "2026-10-20",
+      "id": "TRB-002"
+    },
+    {
+      "cedula": "V-12764934",
+      "nombre": "ALFONSO LEON",
+      "correo": "alfonso@gmail.com",
+      "telefono": "024826472828",
+      "cargo": "Seguridad",
+      "departamento": "Seguridad",
+      "sedeId": "SED-001",
+      "estado": "Activo",
+      "fechaIngreso": "2026-10-20",
+      "id": "TRB-003"
+    }
+  ],
+  "asistencia": [],
+  "accesos": []
+}

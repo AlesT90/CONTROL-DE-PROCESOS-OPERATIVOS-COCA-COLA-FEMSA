@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d8232a">
+  <title>KOF Maracaibo | Gestión de planta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body class="auth-pending">
+  <section class="login-screen hidden" id="login-screen" aria-labelledby="login-title">
+    <div class="login-brand-panel">
+      <a class="login-brand" href="/" aria-label="Coca-Cola FEMSA, Planta Maracaibo">
+        <span class="login-brand-mark">C</span>
+        <span><strong>coca-cola <b>femsa</b></strong><small>PLANTA MARACAIBO</small></span>
+      </a>
+      <div class="login-brand-copy">
+        <span class="login-kicker">GESTIÓN OPERATIVA</span>
+        <h1>El trabajo en equipo<br>mueve todo.</h1>
+        <p>Accede a las herramientas de operación y gestión de planta.</p>
+      </div>
+      <div class="login-brand-footer"><span class="plant-pulse"></span> Plataforma interna · Maracaibo, Zulia</div>
+      <div class="login-brand-orbit" aria-hidden="true"></div>
+    </div>
+    <div class="login-main">
+      <form class="login-card" id="login-form" novalidate>
+        <div class="login-card-heading">
+          <span class="login-card-icon" aria-hidden="true">↗</span>
+          <span class="login-kicker">BIENVENIDO DE NUEVO</span>
+          <h2 id="login-title">Iniciar sesión</h2>
+          <p>Ingresa tus credenciales para continuar.</p>
+        </div>
+        <label class="login-field" for="login-email">Correo electrónico
+          <span class="login-input-wrap"><span aria-hidden="true">✉</span><input id="login-email" name="email" type="email" autocomplete="username" placeholder="nombre@empresa.com" required></span>
+        </label>
+        <label class="login-field" for="login-password">Contraseña
+          <span class="login-input-wrap"><span aria-hidden="true">⌑</span><input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Tu contraseña" required></span>
+        </label>
+        <label class="login-field" for="login-role">Tipo de usuario
+          <select id="login-role" name="role" required>
+            <option value="encargado">Encargado · Administrador</option>
+            <option value="guardia">Guardia de turno</option>
+          </select>
+        </label>
+        <label class="login-field hidden" id="login-guard-field" for="login-guard">Guardia asignada
+          <select id="login-guard" name="guard" disabled>
+            <option value="">Selecciona tu guardia</option>
+            <option value="A">Guardia A</option>
+            <option value="B">Guardia B</option>
+            <option value="C">Guardia C</option>
+            <option value="D">Guardia D</option>
+          </select>
+        </label>
+        <div class="login-error hidden" id="login-error" role="alert" aria-live="polite"></div>
+        <button class="login-submit" id="login-submit" type="submit">Entrar a la plataforma <span>→</span></button>
+        <div class="login-security"><span aria-hidden="true">▣</span> Acceso protegido · Uso exclusivo del personal autorizado</div>
+      </form>
+      <footer class="login-footer">© 2026 Coca-Cola FEMSA <span>·</span> Gestión de planta</footer>
+    </div>
+  </section>
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="KOF Maracaibo, inicio">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>coca-cola <b>femsa</b></strong><small>PLANTA MARACAIBO</small></span>
+      </a>
+      <div class="nav-caption">GESTIÓN</div>
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <button class="nav-link active" data-page="overview"><span class="nav-icon">▦</span><span>Resumen general</span></button>
+        <div class="nav-caption nav-caption-spaced">OPERACIONES</div>
+        <button class="nav-link" data-page="sedes"><span class="nav-icon">⌖</span><span>Sedes</span><span class="nav-count" data-count="sedes">0</span></button>
+        <button class="nav-link" data-page="trabajadores"><span class="nav-icon">♙</span><span>Trabajadores</span><span class="nav-count" data-count="trabajadores">0</span></button>
+        <button class="nav-link" data-page="asistencia"><span class="nav-icon">◷</span><span>Asistencia</span></button>
+        <button class="nav-link" data-page="accesos"><span class="nav-icon">⇄</span><span>Accesos y vehículos</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="plant-card"><span class="plant-pulse"></span><div><strong>Planta Maracaibo</strong><small>Operación local</small></div><span class="plant-chevron">⌄</span></div>
+        <button class="profile-button" id="logout-button" type="button" title="Cerrar sesión"><span class="avatar" data-user-avatar>AD</span><span class="profile-text"><strong data-user-name>Administrador</strong><small data-user-role>Encargado · Gestión de planta</small></span><span class="profile-more" aria-hidden="true">↪</span></button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Abrir navegación">☰</button>
+        <div class="breadcrumb"><span>Operaciones</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Resumen general</strong></div>
+        <div class="topbar-actions">
+          <span class="date-label" id="today-label"></span>
+          <span class="top-divider"></span>
+          <button class="icon-button theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">◐</button>
+          <button class="icon-button notification-button" aria-label="Notificaciones" title="Notificaciones">♧<i></i></button>
+          <span class="top-avatar" data-user-avatar>AD</span>
+        </div>
+      </header>
+
+      <section class="page-content" id="overview-page">
+        <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CENTRO DE OPERACIONES</div><h1>Buenos días, <span data-welcome-name>equipo</span> <span class="wave">✳</span></h1><p class="page-subtitle">Aquí tienes el pulso operativo de la planta hoy.</p></div><div class="live-chip"><span></span> Sistema operativo</div></div>
+        <section class="hero-card">
+          <div class="hero-content"><span class="hero-kicker">PLANTA MARACAIBO · ZULIA</span><h2>Todo en orden.<br><em>Seguimos moviendo</em> lo que importa.</h2><p>Supervisa personal, asistencia y actividad de vehículos desde un solo lugar.</p><button class="hero-button" data-page="trabajadores">Explorar operaciones <span>↗</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="art-ring ring-one"></div><div class="art-ring ring-two"></div><div class="art-sun"></div><div class="art-bottle"><div class="bottle-cap"></div><div class="bottle-neck"></div><div class="bottle-body"><div class="bottle-label"><span>coca-cola</span><small>femsa</small></div></div></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div><div class="art-leaf leaf-three"></div><span class="art-sparkle sparkle-one">✳</span><span class="art-sparkle sparkle-two">✳</span></div>
+          <div class="hero-index">01 <span>/</span> 04</div>
+        </section>
+        <div class="section-heading"><div><h2>Vista de hoy</h2><p>Indicadores principales de la operación</p></div><span class="updated-label"><span></span> Datos locales actualizados</span></div>
+        <section class="stats-grid" aria-label="Indicadores">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-red">♙</span><span class="stat-trend">PERSONAL</span></div><strong class="stat-value" data-stat="trabajadores">0</strong><span class="stat-label">Trabajadores registrados</span><div class="stat-foot"><span class="stat-foot-dot green-dot"></span> En el directorio de planta</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-blue">◷</span><span class="stat-trend">ASISTENCIA</span></div><strong class="stat-value" data-stat="asistencia">0</strong><span class="stat-label">Marcajes registrados</span><div class="stat-foot"><span class="stat-foot-dot blue-dot"></span> Total de eventos guardados</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-amber">⇄</span><span class="stat-trend">MOVILIDAD</span></div><strong class="stat-value" data-stat="accesos">0</strong><span class="stat-label">Registros de acceso</span><div class="stat-foot"><span class="stat-foot-dot amber-dot"></span> Movimientos vehiculares</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon icon-green">⌖</span><span class="stat-trend">INFRAESTRUCTURA</span></div><strong class="stat-value" data-stat="sedes">0</strong><span class="stat-label">Sedes registradas</span><div class="stat-foot"><span class="stat-foot-dot green-dot"></span> Plantas y centros</div></article>
+        </section>
+        <div class="bottom-grid"><section class="panel activity-panel"><div class="panel-heading"><div><h2>Actividad reciente</h2><p>Últimos registros en el sistema</p></div><button class="text-action" data-page="asistencia">Ver asistencia <span>→</span></button></div><div id="recent-activity" class="activity-list"></div></section><section class="panel quick-panel"><div class="panel-heading"><div><h2>Accesos rápidos</h2><p>Atajos para tu gestión diaria</p></div></div><div class="quick-links"><button class="quick-link" data-create="trabajadores"><span class="quick-icon q-red">♙</span><span><strong>Registrar trabajador</strong><small>Agregar al directorio</small></span><span class="quick-arrow">↗</span></button><button class="quick-link" data-create="asistencia"><span class="quick-icon q-blue">◷</span><span><strong>Registrar asistencia</strong><small>Crear un nuevo marcaje</small></span><span class="quick-arrow">↗</span></button><button class="quick-link" data-create="accesos"><span class="quick-icon q-amber">⇄</span><span><strong>Registrar acceso</strong><small>Anotar movimiento vehicular</small></span><span class="quick-arrow">↗</span></button></div></section></div>
+        <footer class="app-footer"><span>© 2026 Coca-Cola FEMSA · Uso interno</span><span>GESTIÓN DE PLANTA <b>•</b> MARACAIBO</span></footer>
+      </section>
+
+      <section class="page-content module-page hidden" id="module-page">
+        <div class="module-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span><span id="module-eyebrow">GESTIÓN OPERATIVA</span></div><h1 id="module-title">Trabajadores</h1><p class="page-subtitle" id="module-description"></p></div><button class="primary-button" id="add-record"><span>＋</span> Nuevo registro</button></div>
+        <div class="module-summary" id="module-summary"></div>
+        <section class="panel data-panel"><div class="table-toolbar"><div class="table-title"><h2 id="table-title">Directorio</h2><span class="result-count" id="result-count">0 registros</span></div><div class="table-tools"><label class="search-box"><span>⌕</span><input id="table-search" type="search" placeholder="Buscar registros…" aria-label="Buscar registros"></label><button class="filter-button" id="refresh-data" title="Actualizar datos" aria-label="Actualizar datos">⟳</button></div></div><div class="table-wrap"><table><thead id="table-head"></thead><tbody id="table-body"></tbody></table><div class="empty-state hidden" id="empty-state"><span class="empty-icon">▤</span><strong id="empty-title">Aún no hay registros</strong><p id="empty-description">Crea el primer registro para empezar.</p><button class="primary-button" data-empty-create><span>＋</span> Crear registro</button></div></div><div class="table-footer"><span id="table-footer-count">Mostrando 0 registros</span><span>Los datos se guardan en este navegador</span></div></section>
+        <footer class="app-footer"><span>© 2026 Coca-Cola FEMSA · Uso interno</span><span>GESTIÓN DE PLANTA <b>•</b> MARACAIBO</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop" role="presentation"><section class="record-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> NUEVO REGISTRO</div><h2 id="modal-title">Registrar</h2><p id="modal-description">Completa los campos para guardar la información.</p></div><button class="modal-close" id="modal-close" aria-label="Cerrar">×</button></div><form id="record-form" novalidate><div class="form-grid" id="form-fields"></div><div class="form-error hidden" id="form-error" role="alert"></div><div class="modal-footer"><span><i class="required-star">*</i> Campos obligatorios</span><div><button type="button" class="secondary-button" id="cancel-modal">Cancelar</button><button type="submit" class="primary-button"><span>✓</span> Guardar registro</button></div></div></form></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
